@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'Home', root_path, class:"navbar-brand" %>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+
+      
+      <% if user_signed_in? %>
+
+        <li class="nav-item">
+          <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link" %>
+        </li>
+
+
+        <li class="nav-item">
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"nav-link" %>
+        </li>
+
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Log In", new_user_session_path, class:"nav-link" %>
+        </li>
+      <% end %>
+      
+      
+    </ul>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <img onClick="javascript:window.open('https://donate.redcross.org.uk/appeal/ukraine-crisis-appeal', '_blank');" width=30 alt="Ukraine-coloured heart float-start" class="c-icon ms-3 mt-2" src="https://d24y9kuxp2d7l2.cloudfront.net/assets/icons/ukraine-ddee71b9968c24f6ffad2d0967fe8f39d2d00dd8.svg">  
+    <% end %>
+  </div>
+  
+</nav>
+
+
+<style>
+  body {background-color: aquamarine;}
+
+  .collapse {
+    color:black;
+  }
+
+  .navbar
+  {  
+    height: 10%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+
+  }
+
+  @-webkit-keyframes rainbow 
+  {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+  }
+  @-moz-keyframes rainbow 
+  {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+  }
+  @-o-keyframes rainbow 
+  {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+  }
+  @keyframes rainbow 
+  { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+  }
+</style>
+
+<br><br><br>
